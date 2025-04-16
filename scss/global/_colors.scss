@@ -1,7 +1,12 @@
 :root {
-  --color-bg: hsl(240, 37%, 11%);
-  --color-header-bg: hsl(240, 37%, 20%);
-  --color-text: hsl(0, 0%, 93%);
-  --color-accent: hsl(296, 99%, 42%);
-  --color-highlight: hsl(296, 99%, 30%);
+  --c-purple-100: hsl(254, 88%, 90%);
+  --c-purple-500: hsl(256, 67%, 59%);
+  --c-yellow-100: hsl(31, 66%, 93%);
+  --c-yellow-500: hsl(39, 100%, 71%);
+  --c-white: hsl(0, 0%, 100%);
+  --c-black: hsl(0, 0%, 7%);
+  --c-grey-100: hsl(300, 5%, 96%);
+
+  --color-bg: var(var(--c-grey-100));
+  --color-text: var(--c-black);
 }

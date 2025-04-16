@@ -1,14 +1,253 @@
-@use '../util/' as u;
+@use "../util/" as u;
 
-.wrapper {
-  width: min(100% - 40px, u.rem(1100));
-  margin-inline: auto;
+@layer layout {
+  :root {
+    --spacing-500: calc(40 / 16 * 1rem);
+    --spacing-400: calc(32 / 16 * 1rem);
+    --spacing-300: calc(24 / 16 * 1rem);
+    --spacing-200: calc(16 / 16 * 1rem);
+    --spacing-100: calc(8 / 16 * 1rem);
 
-  &.has-padding {
-    padding-block: 40px;
+    --br-10: calc(10 / 16 * 1rem);
+    --wrapper-size: calc(1120 / 16 * 1rem);
+  }
 
-    @include u.breakpoint(medium) {
-      padding-block: 60px;
+  body {
+    margin: 0;
+    background-color: var(--c-grey-100);
+  }
+
+  .wrapper {
+    width: min(100% - calc(20px / 16px * 1rem), var(--wrapper-size));
+    margin-inline: auto;
+  }
+
+  .page-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-400);
+    margin-block: var(--spacing-400);
+    section {
+      border-radius: var(--br-10);
+      padding: var(--spacing-300);
+      display: flex;
+      flex-direction: column;
+      row-gap: var(--spacing-300);
+    }
+
+    .content-social-media {
+      padding-inline: var(--spacing-400);
+      padding-block: var(--spacing-500);
+      text-align: center;
+      align-items: center;
+      grid-area: content-social-media;
+
+      &__reviews {
+        img {
+          margin-block-end: var(--spacing-100);
+          margin-inline: auto;
+        }
+      }
+    }
+
+    .content-manage-multiple,
+    .content-maintain-consistent {
+      padding: var(--spacing-200);
+      row-gap: var(--spacing-200);
+    }
+
+    .content-manage-multiple,
+    .content-faster-audience {
+      background-color: var(--c-white);
+    }
+
+    .content-maintain-consistent,
+    .content-write-content {
+      background-color: var(--c-yellow-500);
+    }
+
+    .content-manage-multiple {
+      grid-area: content-manage-multiple;
+    }
+
+    .content-maintain-consistent {
+      padding-block-end: 0;
+      grid-area: content-maintain-consistent;
+
+      img {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: top;
+        max-width: 75%;
+      }
+    }
+
+    .content-schedule {
+      grid-area: content-schedule;
+      padding: var(--spacing-400);
+      row-gap: var(--spacing-400);
+      background-color: var(--c-purple-100);
+    }
+
+    .content-grow-followers {
+      row-gap: var(--spacing-500);
+      display: grid;
+      grid-template-columns: min(30px, 8%) auto min(30px, 8%);
+      text-align: center;
+      grid-area: content-grow-followers;
+
+      > * {
+        grid-column: 2;
+      }
+    }
+
+    .content-faster-audience,
+    .content-grow-followers,
+    .content-write-content {
+      padding: var(--spacing-300);
+    }
+
+    .content-grow-followers,
+    .content-write-content {
+      row-gap: var(--spacing-300);
+    }
+
+    .content-create-schedule {
+      grid-area: content-create-schedule;
+      background-color: var(--c-yellow-100);
+    }
+
+    .content-faster-audience {
+      grid-area: content-faster-audience;
+    }
+
+    .content-write-content {
+      grid-area: content-write-content;
+    }
+  }
+
+  .attribution {
+    padding-inline: var(--spacing-400);
+    padding-block: var(--spacing-300);
+    text-align: center;
+  }
+
+  @include u.breakpoint("medium") {
+    .wrapper {
+      width: min(100% - var(--spacing-500), var(--wrapper-size));
+    }
+
+    .page-content {
+      display: grid;
+      gap: var(--spacing-400);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "content-social-media content-social-media"
+        "content-manage-multiple content-maintain-consistent"
+        "content-schedule content-schedule"
+        "content-grow-followers content-grow-followers"
+        "content-faster-audience content-faster-audience"
+        "content-create-schedule content-write-content";
+
+      .content-manage-multiple {
+        row-gap: 0;
+        justify-content: space-between;
+        padding: var(--spacing-300);
+      }
+
+      .content-schedule {
+        text-align: center;
+        > * {
+          max-width: 357px;
+          margin-inline: auto;
+        }
+      }
+
+      .content-grow-followers {
+        grid-template-columns: min(40px, 15%) repeat(2, auto) min(40px, 15%);
+        align-items: center;
+        column-gap: var(--spacing-500);
+        text-align: left;
+
+        > img {
+          grid-column: 2;
+        }
+
+        h2 {
+          grid-column: 3;
+          max-width: 15ch;
+        }
+      }
+
+      .content-faster-audience {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          margin-block-end: calc(15 / 16 * 1rem);
+        }
+      }
+
+      .content-create-schedule {
+        justify-content: center;
+      }
+
+      .content-write-content {
+        img {
+          max-width: min(400px, 100%);
+        }
+      }
+    }
+  }
+
+  @include u.breakpoint("large") {
+    .page-content {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto calc(45 / 16 * 1rem) calc(135 / 16 * 1rem) auto;
+      gap: var(--spacing-400);
+      grid-template-areas:
+        "content-create-schedule content-social-media content-social-media content-schedule"
+        "content-create-schedule content-manage-multiple content-maintain-consistent content-schedule"
+        "content-write-content content-manage-multiple content-maintain-consistent content-schedule"
+        "content-write-content content-faster-audience content-grow-followers content-grow-followers";
+
+      .content-schedule {
+        display: grid;
+        grid-template-columns: var(--spacing-400) auto var(--spacing-400);
+        row-gap: var(--spacing-300);
+        padding-inline: 0;
+        text-align: left;
+        > * {
+          grid-column: 2;
+        }
+
+        img {
+          grid-column: 2 / -1;
+          height: 100%;
+          max-width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .content-maintain-consistent {
+        overflow: clip;
+      }
+
+      .content-faster-audience {
+        flex-direction: column;
+      }
+
+      .content-grow-followers {
+        grid-auto-flow: column;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: var(--spacing-300);
+
+        img,
+        h2 {
+          grid-column: auto;
+        }
+      }
     }
   }
 }

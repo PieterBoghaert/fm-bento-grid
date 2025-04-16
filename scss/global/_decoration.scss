@@ -1,9 +1,14 @@
-.rounded {
-  border-radius: 16px;
-  overflow: hidden;
-}
+@layer decoration {
+  .has-purple-bg {
+    background-color: var(--c-purple-500);
+    color: var(--c-white);
+  }
 
-em {
-  font-style: normal;
-  background: var(--color-highlight);
+  .has-yellow-text {
+    color: var(--c-yellow-500);
+  }
+
+  .has-purple-text {
+    color: var(--c-purple-500);
+  }
 }

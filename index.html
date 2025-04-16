@@ -3,52 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sass/SCSS Boilerplate</title>
-    <link rel="stylesheet" href="/scss/style.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Bento grid | Boghaert Pieter</title>
+    <link rel="stylesheet" href="./dist/css/style.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   </head>
   <body>
-    <header class="header">
-      <nav class="wrapper">
-        <ul class="header__items">
-          <li class="header__item">
-            <a class="header__link" href="/">Home</a>
-          </li>
-          <li class="header__item">
-            <a class="header__link" href="">Products</a>
-          </li>
-          <li class="header__item">
-            <a class="header__link" href="">Services</a>
-          </li>
-          <li class="header__item">
-            <a class="header__link" href="">About</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="hero">
-        <div class="wrapper has-padding hero__wrapper">
-          <div class="hero__text">
-            <h1>Sass/SCSS Boilerplate Styles</h1>
-            <p>Nobis accusamus architecto sunt libero aspernatur repellat necessitatibus earum, exercitationem rerum modi veniam impedit nihil asperiores vero molestias dolorem aperiam quod similique beatae. Accusantium, expedita perspiciatis?</p>
-          </div>
-          <div class="hero__image">
-            <img class="rounded" src="/img/mikhail-vasilyev-IFxjDdqK_0U-unsplash.jpg" alt="grey kitten with blue eyes" />
-          </div>
+    <main class="page-content wrapper">
+      <section
+        id="contentSocialMedia"
+        class="content-social-media has-purple-bg"
+      >
+        <h1>
+          Social Media <span class="has-yellow-text">10x</span>
+          <em>Faster</em> with AI
+        </h1>
+        <div class="content-social-media__reviews">
+          <img
+            src="./assets/images/illustration-five-stars.webp"
+            alt="5 stars illustration"
+            width="192"
+            height="32"
+          />
+          <span>Over 4,000 5-star reviews</span>
         </div>
       </section>
-      <section class="feature">
-        <div class="wrapper">
-          <h2>Sass/SCSS Boilerplate Styles</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <em>Possimus, eveniet quos!</em> Veritatis nesciunt <a href="">dignissimos fugiat.</a> Dignissimos, repellendus! Totam laboriosam laudantium impedit iusto possimus, vel quae. Vero nemo sapiente assumenda repellendus iure? Doloribus, nobis saepe voluptate, beatae cumque molestiae a quidem eligendi ipsa, itaque nisi! Asperiores, est porro. Adipisci deleniti dolor nulla dicta illo itaque obcaecati! Sapiente incidunt assumenda eveniet neque libero. Repellat, exercitationem. Dolorum nihil, nisi facere labore veritatis sunt totam harum molestias inventore hic consequuntur architecto error adipisci distinctio?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus adipisci ex error consequatur quas nisi ratione sunt excepturi enim, amet necessitatibus beatae neque labore ipsum ipsam eaque expedita quaerat recusandae facilis nulla optio sed, culpa quod animi. Amet reiciendis aliquid optio dolores veritatis dolore nostrum consequatur mollitia <a href="">possimus quidem</a> doloremque iusto corrupti neque saepe totam tempora, sint consectetur molestias laboriosam quisquam non facere. Consectetur laboriosam ipsa perferendis accusantium quam? Nobis accusamus architecto sunt libero aspernatur repellat necessitatibus earum, exercitationem rerum modi veniam impedit nihil asperiores vero molestias dolorem aperiam quod similique beatae. Accusantium, expedita perspiciatis? Culpa, asperiores! Id, magni dignissimos!</p>
+      <section id="contentManageMultiple" class="content-manage-multiple">
+        <img
+          src="./assets/images/illustration-multiple-platforms.webp"
+          alt="Illustrations multiple platforms"
+          width="633"
+          height="134"
+        />
+        <h3>Manage multiple accounts and platforms.</h3>
+      </section>
+      <section
+        id="contentMaintainConsistent"
+        class="content-maintain-consistent"
+      >
+        <h3>Maintain a consistent posting schedule.</h3>
+        <img
+          src="./assets/images/illustration-consistent-schedule.webp"
+          alt="Illustrations consistent schedule"
+        />
+      </section>
+      <section id="contentSchedule" class="content-schedule">
+        <h3>Schedule to social media.</h3>
+        <img
+          src="./assets/images/illustration-schedule-posts.webp"
+          alt="Illustration schedule post"
+          width="715"
+          height="638"
+        />
+        <p>
+          Optimize post timings to publish content at the perfect time for your
+          audience.
+        </p>
+      </section>
+      <section
+        id="contentGrowFollowers"
+        class="content-grow-followers has-purple-bg"
+      >
+        <img
+          src="./assets/images/illustration-grow-followers.webp"
+          alt="Grow followers with non-stop content"
+        />
+        <h2>Grow followers with non-stop content.</h2>
+      </section>
+      <section id="contentFasterAudience" class="content-faster-audience">
+        <div>
+          <h2 class="h1">>56%</h2>
+          <p>faster audience growth</p>
         </div>
+        <div>
+          <img
+            src="./assets/images/illustration-audience-growth.webp"
+            alt="faster audience growth"
+          />
+        </div>
+      </section>
+      <section id="contentCreateSchedule" class="content-create-schedule">
+        <h2>
+          Create and schedule content
+          <em class="has-purple-text">quicker</em>.
+        </h2>
+        <img
+          src="./assets/images/illustration-create-post.webp"
+          alt="Create and schedule content"
+        />
+      </section>
+      <section id="contentWriteContent" class="content-write-content">
+        <h2>Write your content using AI.</h2>
+        <img
+          src="./assets/images/illustration-ai-content.webp"
+          alt="Write your content using AI."
+        />
       </section>
     </main>
-    <footer class="footer">
-      <div class="wrapper">
-        <p class="small">Created by Coder Coder</p>
-      </div>
-    </footer>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="https://pieterboghaert.be">Boghaert Pieter</a>.
+    </div>
   </body>
 </html>

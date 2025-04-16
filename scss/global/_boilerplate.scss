@@ -1,19 +1,35 @@
-@use '../util/' as u;
+@use "../util/" as u;
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@layer global {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
-}
+  body,
+  section {
+    overflow-x: clip;
+  }
 
-img {
-  display: block;
-  max-width: 100%;
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hide-on-mobile {
+    @media (width < calc(700 / 16 * 1rem)) {
+      display: none;
+    }
+  }
+
+  .visually-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
 }

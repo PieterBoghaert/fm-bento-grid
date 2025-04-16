@@ -1,40 +1,93 @@
-@use '../util/' as u;
+@use "../util/" as u;
 
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-  line-height: 1.1;
-}
-
-h1 {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(36), u.rem(48));
-}
-
-h2 {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(28), u.rem(36));
-}
-
-p {
-  @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(16), u.rem(18));
-  line-height: 1.5;
-
-  &.small {
-    font-size: u.rem(13);
+@layer typography {
+  /* dm-sans-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/assets/fonts/dm-sans-v15-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-}
+  /* dm-sans-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/assets/fonts/dm-sans-v15-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
 
-a {
-  text-decoration: none;
-}
+  :root {
+    --fs-62: calc(62 / 16 * 1rem);
+    --fs-40: calc(40 / 16 * 1rem);
+    --fs-32: calc(32 / 16 * 1rem);
+    --fs-18: calc(18 / 16 * 1rem);
 
-p > a {
-  color: var(--color-text);
-  text-decoration: underline;
-  transition: color 150ms ease-in-out;
+    --font-size-h1: var(--fs-62);
+    --font-size-h2: var(--fs-40);
+    --font-size-h3: var(--fs-32);
+    --font-size-p: var(--fs-18);
 
-  &:hover {
-    color: var(--color-accent);
+    --font-dm-sans: "DM Sans", sans-serif;
+  }
+
+  body {
+    font-size: var(--font-size-p);
+    font-family: var(--font-dm-sans);
+    font-weight: 400;
+    line-height: calc(20 / 16 * 1rem);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  h1,
+  .h1 {
+    font-size: var(--font-size-h1);
+    line-height: calc(58 / 16 * 1rem);
+    letter-spacing: -3px;
+    max-width: 15ch;
+    text-wrap: balance;
+  }
+
+  h2,
+  .h2 {
+    font-size: var(--font-size-h2);
+    line-height: calc(36 / 16 * 1rem);
+    letter-spacing: -2px;
+  }
+
+  :is(h2, .h2, h3, .h3) {
+    letter-spacing: -2px;
+  }
+
+  h3,
+  .h3 {
+    font-size: var(--font-size-h3);
+    line-height: calc(28 / 16 * 1rem);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  p > a {
+    color: var(--color-text);
+    text-decoration: underline;
+    transition: color 150ms ease-in-out;
+
+    &:hover {
+      color: var(--color-accent);
+    }
   }
 }
