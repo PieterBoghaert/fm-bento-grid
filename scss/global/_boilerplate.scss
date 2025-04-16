@@ -14,12 +14,12 @@
 
   img {
     display: block;
-    max-width: 100%;
+    max-inline-size: 100%;
     height: auto;
   }
 
   .hide-on-mobile {
-    @media (width < calc(700 / 16 * 1rem)) {
+    @media (inline-size < calc(700 / 16 * 1rem)) {
       display: none;
     }
   }
@@ -28,8 +28,8 @@
     position: absolute;
     left: -10000px;
     top: auto;
-    width: 1px;
-    height: 1px;
+    inline-size: 1px;
+    block-size: 1px;
     overflow: hidden;
   }
 }
