@@ -119,6 +119,9 @@
 
     .content-faster-audience {
       grid-area: content-faster-audience;
+      h2 {
+        margin-block-end: var(--spacing-200);
+      }
     }
 
     .content-write-content {
@@ -183,10 +186,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-
-        h2 {
-          margin-block-end: calc(15 / 16 * 1rem);
-        }
       }
 
       .content-create-schedule {
